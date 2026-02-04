@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3');
 const sequelize = new Sequelize(
     {
         dialect: 'sqlite',
-        storage: './db/app.db'
+        storage: './db/app.db',
         dialectModule: sqlite3
     }
 );
@@ -12,3 +12,4 @@ const sequelize = new Sequelize(
 
 
 module.exports = sequelize;
+
