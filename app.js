@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 //db connection
-dbdb
+db
     .sync() // <--- Troquei de 'authenticate' para 'sync'
     .then(() => {
         console.log('Conectou ao banco e criou as tabelas necessárias!');
@@ -90,4 +90,5 @@ app.get('/', function (req, res) {
 
 app.use('/jobs', require('./routes/jobs'));
 module.exports = app;
+
 
