@@ -31,14 +31,14 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 //db connection
-db.authenticate()
-    .then(function () {
-        console.log('Conexão com o banco de dados realizada com sucesso!');
+dbdb
+    .sync() // <--- Troquei de 'authenticate' para 'sync'
+    .then(() => {
+        console.log('Conectou ao banco e criou as tabelas necessárias!');
     })
-    .catch(function (err) {
-        console.log(`Não foi possível conectar ao banco de dados: ${err}`);
+    .catch((err) => {
+        console.log('Ocorreu um erro ao conectar: ' + err);
     });
-
 //routes
 app.get('/', function (req, res) {
 
@@ -90,3 +90,4 @@ app.get('/', function (req, res) {
 
 app.use('/jobs', require('./routes/jobs'));
 module.exports = app;
+
