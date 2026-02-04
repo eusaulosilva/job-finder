@@ -87,4 +87,6 @@ app.get('/', function (req, res) {
 //     res.render('index');
 // });
 
+
 app.use('/jobs', require('./routes/jobs'));
+module.exports = app;
