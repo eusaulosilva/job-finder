@@ -64,7 +64,7 @@ app.get('/', function (req, res) {
         Job.findAll({
             where: {
                 title: {
-                    [Op.like]: `%${search}%`
+                    [Op.iLike]: `%${search}%`
                 }
             },
 
@@ -90,5 +90,6 @@ app.get('/', function (req, res) {
 
 app.use('/jobs', require('./routes/jobs'));
 module.exports = app;
+
 
 
