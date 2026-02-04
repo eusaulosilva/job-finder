@@ -1,0 +1,26 @@
+{
+  "name": "job_finder",
+  "version": "1.0.0",
+  "description": "Este sistema é um portal para programadores encontrarem vagas de trabalho",
+  "keywords": [
+    "dev",
+    "jobs"
+  ],
+  "license": "ISC",
+  "author": "Saulo Silva <eusaulosilva@gmail.com>",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.4",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

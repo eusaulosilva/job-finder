@@ -1,0 +1,40 @@
+<div id="top-container" class="container-fluid">
+    <h1 id="main-title" class="mt-4 text-center">Encontre a vaga dos seus sonhos!</h1>
+    <p id="main-subtitle" class="lead text-center">Explore as melhores oportunidades de emprego disponíveis.</p>
+    <form action="/" id="search-form" class="form-inline" method="GET">
+        <div class="input-group">
+            <input type="text" class="form-control" id="job" name="job" placeholder="Pesquisar vagas..."
+                aria-label="Pesquisar vagas" aria-describedby="search-button">
+            <button class="btn btn-primary" type="submit" id="search-button">Pesquisar</button>
+        </div>
+
+    </form>
+</div>
+<main class="container my-5">
+    <div id="jobs-container" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{#if search}}
+                <h2 id="job-list-title" class=" text-center">Buscando vagas que contem: {{search}}</h2>
+                {{else}}
+                <h2 id="job-list-title" class=" text-center">Vagas Disponíveis</h2>
+                {{/if}}
+                <ul id="job-list" class="list-group">
+                    {{#each jobs}}
+                    <li class="list-group-item {{#if dataValues.new_job}}new-job{{/if}}">
+                        <img src="/img/company.png" alt="company">
+                        <p>{{dataValues.company}}</p>
+                        <h2>{{dataValues.title}}</h2>
+                        <p>R$ {{dataValues.salary}}</p>
+                        <span class="new-job-label">Nova</span>
+                        <a href="/jobs/view/{{dataValues.id}}" class="btn btn-primary">Ver Detalhes</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
