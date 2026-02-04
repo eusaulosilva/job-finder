@@ -1,12 +1,14 @@
 const Sequelize = require('sequelize');
+const pg = require('pg'); // <--- Importamos explicitamente
 
-// Cria a conexão usando a variável de ambiente que a Vercel criou automaticamente
+// A Vercel/Neon preenche a POSTGRES_URL automaticamente
 const sequelize = new Sequelize(process.env.POSTGRES_URL, {
     dialect: 'postgres',
+    dialectModule: pg, // <--- Forçamos o Sequelize a usar este módulo
     dialectOptions: {
         ssl: {
             require: true,
-            rejectUnauthorized: false // Necessário para conexões seguras na nuvem
+            rejectUnauthorized: false
         }
     }
 });
